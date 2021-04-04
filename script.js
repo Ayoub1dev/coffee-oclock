@@ -70,6 +70,8 @@ for (let i = 0; i < CUPS_LIST.length; i++) {
 */
 
 // the below for looop is to rotate the mugs when clicked
+let angle = 0;
+
 for (let i = 0; i < CUPS_LIST.length; i++) {
     CUPS_LIST[i].addEventListener("click", function () {
         id = CUPS_LIST[i].id;
@@ -86,14 +88,13 @@ for (let i = 0; i < CUPS_LIST.length; i++) {
                 // The  template literal above is to change the turning degree
                 // according to the clicked id. This way it will always rotate clock-wise.
 
+                angle = i * 45;
                 console.log(`rotation ${i * 45} deg`);
         }
     });
 }
 
 // The code below is for the footer buttons to rotate the coffe table.
-
-let angle = 0;
 
 BEFORE.addEventListener("click", function () {
     angle -= 45;
@@ -104,5 +105,3 @@ AFTER.addEventListener("click", function () {
     angle += 45;
     CUPS_PARENT.style.transform = `rotate(${angle}deg)`;
 });
-
-// Still in progress!!
