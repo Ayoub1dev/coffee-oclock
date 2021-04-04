@@ -107,3 +107,13 @@ AFTER.addEventListener("click", function () {
     angle += 45;
     CUPS_PARENT.style.transform = `rotate(${angle}deg)`;
 });
+
+// ORDER OF COFFE IMAGES:
+//  1 Americano >
+//  2 Turkish >
+//  3 Espresso >
+//  4 Caffe Mocha >
+//  5 Latte >
+//  6 Capuccino >
+//  7 Caffee Breve   >
+//  8 Espresso Machiatto
