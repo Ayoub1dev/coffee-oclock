@@ -89,6 +89,8 @@ for (let i = 0; i < CUPS_LIST.length; i++) {
                 // according to the clicked id. This way it will always rotate clock-wise.
 
                 angle = i * 45;
+                // the anle variable will be updated to what angle the div is so when the footer
+                //  buttons are pressed the correct updates take place.
                 console.log(`rotation ${i * 45} deg`);
         }
     });
