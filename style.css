@@ -149,6 +149,7 @@ nav {
     background-size: cover;
     transition: cubic-bezier(0.17, 0.67, 0.83, 0.67);
     transition-duration: 1.5s;
+    z-index: 0;
 }
 .coffee-properties-container {
     width: 250px;
@@ -238,11 +239,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    z-index: 2;
 }
 .before {
     border: 1px solid black;
     padding: 5px 10px;
-    cursor: pointer;
 }
 .before:hover {
     transform: scale(1.2);
@@ -250,17 +251,22 @@ footer {
 .after {
     border: 1px solid black;
     padding: 5px 10px;
-    cursor: pointer;
 }
 .after:hover {
     transform: scale(1.2);
 }
-.before-after-container p,
-.before-after-container p {
+.before-after-container button,
+.before-after-container button {
     display: inline;
     text-decoration: none;
     color: var(--black-property-color);
     font-size: 15px;
+
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
 .links-container {
@@ -304,7 +310,7 @@ footer {
     cursor: pointer;
 }
 #cup-0 {
-    background-color: black;
+    /* background-color: black; */
     position: relative;
     top: 214px;
     left: 336px;
