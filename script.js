@@ -75,7 +75,8 @@ const coffeProps = {
     // the key name is the same as the id of the coffee mugs on the coffee table
     "cup-0": {
         title: "AMERICANO",
-        description: "text",
+        description:
+            "Caffè Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. The strength of an Americano varies with the number of shots of espresso and the amount of water added",
         image: `<img src="images/americano.png"
                         alt="americano coffee mug"
                          style="
@@ -86,7 +87,8 @@ const coffeProps = {
     },
     "cup-1": {
         title: " ESPRESSO MACHIATO",
-        description: "text",
+        description:
+            "Espresso is a coffee-brewing method of Italian origin, in which a small amount of nearly boiling water is forced under 9–10 bars of pressure through finely-ground coffee beans. Espresso coffee can be made with a wide variety of coffee beans and roast degrees.",
         image: `<img src="images/espresso-machiato.png"
                         alt="ESPRESSO MACHIATO"
                          style="
@@ -97,7 +99,8 @@ const coffeProps = {
     },
     "cup-2": {
         title: "ESPRESSO",
-        description: "text",
+        description:
+            "Espresso is a coffee-brewing method of Italian origin, in which a small amount of nearly boiling water is forced under 9–10 bars of pressure through finely-ground coffee beans. Espresso coffee can be made with a wide variety of coffee beans and roast degrees.",
         image: `<img src="images/espresso.png"
                         alt="espresso coffee "
                          style="
@@ -108,7 +111,8 @@ const coffeProps = {
     },
     "cup-3": {
         title: "CAFE MOCHA",
-        description: "text",
+        description:
+            "A caffè mocha, also called mocaccino, is a chocolate-flavoured variant of a caffè latte, commonly served in a glass. Other commonly used spellings are mochaccino and also mochachino. The name is derived from the city of Mocha, Yemen, which was one of the centers of early coffee trade",
         image: `<img src="images/cafe-mocha.png"
                         alt="cafe mocha"
                          style="
@@ -119,7 +123,8 @@ const coffeProps = {
     },
     "cup-4": {
         title: "LATTE",
-        description: "text",
+        description:
+            "Caffe latte is a coffee drink made with espresso and steamed milk. The term comes from the Italian caffè e latte, caffelatte or caffellatte, which means 'coffee & milk'. In English, it is often shortened to just latte; either or both words sometimes have an accent on the final e.",
         image: `<img src="images/latte.png"
                         alt="latte coffee "
                          style="
@@ -130,7 +135,8 @@ const coffeProps = {
     },
     "cup-5": {
         title: "CAPUCCINO",
-        description: "text",
+        description:
+            "A cappuccino is an espresso-based coffee drink that originated in Italy, and is traditionally prepared with steamed milk foam. Variations of the drink involve the use of cream instead of milk, using non-dairy milks, and flavoring with cinnamon or chocolate powder.",
         image: `<img src="images/cappuccino.png"
                         alt="cappuccino"
                          style="
@@ -141,7 +147,8 @@ const coffeProps = {
     },
     "cup-6": {
         title: "CAFE BREVE",
-        description: "text",
+        description:
+            "Caffè breve is an espresso-based drink that's made like a cappuccino, but with steamed half-and-half instead of milk. ... You will also see it called the breve latte, cafè breve, and breve coffee. Breve means 'short' in Italian",
         image: `<img src="images/cafe-breve.png"
                         alt="CAFE BREVE"
                          style="
@@ -152,7 +159,8 @@ const coffeProps = {
     },
     "cup-7": {
         title: "TURKISH COFFEE",
-        description: "tt",
+        description:
+            "Coffee and water, usually with added sugar, is brought to the boil in a special pot called cezve in Turkey, and often called ibrik elsewhere. As soon as the mixture begins to froth, and before it boils over, it is taken off the heat; it may be briefly reheated twice more to increase the desired froth.",
         image: `<img src="images/turkish-coffee.png"
         alt="turkish coffee"
          style="
@@ -170,6 +178,11 @@ let coffeImage = document.querySelector(".coffee-image-container");
 // the below for looop is to rotate the mugs when clicked
 let angle = 0;
 
+//
+coffeeTitle.innerHTML = coffeProps[`cup-0`].title;
+coffeeDescription.innerHTML = coffeProps[`cup-0`].description;
+coffeImage.innerHTML = coffeProps[`cup-0`].image;
+
 for (let i = 0; i < CUPS_LIST.length; i++) {
     CUPS_LIST[i].addEventListener("click", function () {
         id = CUPS_LIST[i].id;
@@ -185,9 +198,14 @@ for (let i = 0; i < CUPS_LIST.length; i++) {
                 CUPS_PARENT.style.transform = `rotate(${i * 45}deg)`;
                 // The  template literal above is to change the turning degree
                 // according to the clicked id. This way it will always rotate clock-wise.
+
+                // Below there is the code to change the data on the properties container so that
+                // when a coffee mug is pressed the correct info is displayed.
                 coffeeTitle.innerHTML = coffeProps[`cup-${i}`].title;
+
                 coffeeDescription.innerHTML =
                     coffeProps[`cup-${i}`].description;
+
                 coffeImage.innerHTML = coffeProps[`cup-${i}`].image;
 
                 angle = i * 45;
