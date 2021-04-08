@@ -186,11 +186,6 @@ nav {
 .coffee-image-container {
     width: 100%;
 }
-.coffee-image-container img {
-    display: block;
-    margin: auto;
-    width: 230px;
-}
 
 .order-button-container {
     width: 100%;
