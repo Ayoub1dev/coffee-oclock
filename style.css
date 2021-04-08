@@ -106,6 +106,7 @@ nav {
 /* CONTENT */
 .content {
     /* this class is to position the main content in the middel of the screen */
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -115,6 +116,7 @@ nav {
 .flex-center {
     /* this is to position the coffe table, table of properties and title always
         in the middle of the screen */
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -147,16 +149,24 @@ nav {
     background-image: url(images/coffe-on-table.png);
     background-repeat: no-repeat;
     background-size: cover;
-    transition: cubic-bezier(0.17, 0.67, 0.83, 0.67);
-    transition-duration: 1.5s;
+    transition: ease-in-out;
+    transition-duration: 0.7s;
     z-index: 0;
+}
+.selector {
+    position: absolute;
+    right: 250px;
+    width: 120px;
+    height: 2px;
+    background-color: #525151;
+    transition-duration: 2s;
 }
 .coffee-properties-container {
     width: 250px;
     min-height: 375px;
     max-height: 500px;
     border: var(--black-property-color) 1px solid;
-    border-left: #6b6b6b 3px solid;
+    border-left: #525151 2px solid;
     background-color: transparent;
 
     display: grid;
