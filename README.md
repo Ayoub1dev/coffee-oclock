@@ -1,11 +1,10 @@
-# Frontend Mentor - FAQ accordion card solution
+# COFFEE O'CLOCK
 
-This is a solution to the [FAQ accordion card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam). 
+This is a simple low quality website to learn and practice some basic JavaScript. I might update this website by adding a shopping cart and payout athentication when I have the skills required. 
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -18,53 +17,79 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
 
 ## Overview
 
-### The challenge
 
-Users should be able to:
-
-- View the optimal layout for the component depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Hide/Show the answer to a question when the question is clicked
 
 ### Screenshot
 
-![](C:\Users\CARLOS\Pictures\h\faq-accordion.jpg)
+![](C:\Users\CARLOS\Pictures\h\screen-shot.JPG)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/first-use-of-js-in-project-22wnyI3C6)
-- Live Site URL: [Add live site URL here](https://faq-card-accordion-main.vercel.app/)
+- Live Site URL: [https://coffee-oclock-qo5la1wse-ayoub1dev.vercel.app/](https://coffee-oclock-qo5la1wse-ayoub1dev.vercel.app/)
 
 ## My process
-  I have done the desktop version first by using media queries then I have developed the mobile version without @media.
+  I have done the only the desktop version because my goal was to practice JS and I didn't want to spend too long on the layout and design.
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- CSS
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
+- Desktop-first workflow
 - JavaScript
 
 
 ### What I learned
 
-I have learnt how to used the JS I have learnt to make an accordion and i have got an idea of how to use js fr future projects.
+I have learnt that the first code is not always the best as I have simplified. I have simplified 55 lines of code into 22 lines that can be used for larger data without any additional code - this by just spending 30 mins more thinking how to make the code more functional for future updates
 
 
 ```js
-acc[i].addEventListener('click',function(){.,..}
+	for (let i = 0; i < CUPS_LIST.length; i++) {
+    CUPS_LIST[i].addEventListener("click", function () {
+        id = CUPS_LIST[i].id;
+
+        switch (id) {
+            // the role of this switch statement is to give the 'transform'
+            // property to the clicked mug.
+
+            case `cup-${i}`:
+                console.log("switch working");
+
+                CUPS_PARENT.style.removeProperty("transform");
+                CUPS_PARENT.style.transform = `rotate(${i * 45}deg)`;
+                // The  template literal above is to change the turning degree
+                // according to the clicked id. This way it will always rotate clock-wise.
+
+                // Below there is the code to change the data on the properties container so that
+                // when a coffee mug is pressed the correct info is displayed.
+                coffeeTitle.innerHTML = coffeProps[`cup-${i}`].title;
+
+                coffeeDescription.innerHTML =
+                    coffeProps[`cup-${i}`].description;
+
+                coffeImage.innerHTML = coffeProps[`cup-${i}`].image;
+
+                angle = i * 45;
+                // the anle variable will be updated to what angle the div is so when the footer
+                //  buttons are pressed the correct updates take place.
+                console.log(`rotation ${i * 45} deg`);
+        }
+    });
+}
 ```
 
 ### Continued development
 
-I would like to use more JS to make animations and 3D web graphics, and also learn how to close an open accordion when another accordion is oppened.
+I would like to learn how to use data structures in real life projects. This could happen if I update this project to make it a e-comerce website with logins or by making another project specifically for this.
+
+Currently I started learning basics of algorithms.
 
 
 ## Author
 
-- Frontend Mentor - [@Ayoub1dev](https://www.frontendmentor.io/profile/Ayoub1dev)
+- Me
 
 
